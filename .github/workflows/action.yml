@@ -50,5 +50,3 @@ jobs:
     - name: test
       run: |
           df -hl
-          df -h
-          du -sh .
