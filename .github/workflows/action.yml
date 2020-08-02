@@ -38,7 +38,8 @@ jobs:
           
           
     - name: Clone source code
-      run: git clone $REPO_URL openwrt
+      run: |
+          git clone $REPO_URL openwrt
           cd openwrt
           ./scripts/feeds update -a
           ./scripts/feeds install -a
@@ -46,6 +47,7 @@ jobs:
           make download -j8
       
     - name: test
-      run: df -hl
+      run: |
+          df -hl
           df -h
           du -sh .
